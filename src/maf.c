@@ -296,7 +296,8 @@ void print_maf_align
 
 	if (sp1->p == NULL)		// sequence 1 is not partitioned
 		{
-		name1 = (seq1->useFullNames)? seq1->header : seq1->shortHeader;
+		// name1 = (seq1->useFullNames)? seq1->header : seq1->shortHeader;
+		name1 = seq1->shortHeader;
 		if ((name1 == NULL) || (name1[0] == 0)) name1 = "seq1";
 		offset1   = 0;
 		startLoc1 = seq1->startLoc;
@@ -315,7 +316,8 @@ void print_maf_align
 
 	if (sp2->p == NULL)		// sequence 2 is not partitioned
 		{
-		name2 = (seq2->useFullNames)? seq2->header : seq2->shortHeader;
+		// name2 = (seq2->useFullNames)? seq2->header : seq2->shortHeader;
+		name2 = seq2->shortHeader;
 		if ((name2 == NULL) || (name2[0] == 0)) name2 = "seq2";
 		offset2   = 0;
 		startLoc2 = seq2->startLoc;
@@ -557,7 +559,8 @@ void print_maf_match
 
 	if (sp1->p == NULL)		// sequence 1 is not partitioned
 		{
-		name1 = (seq1->useFullNames)? seq1->header : seq1->shortHeader;
+		// name1 = (seq1->useFullNames)? seq1->header : seq1->shortHeader;
+		name1 = seq1->shortHeader;
 		if ((name1 == NULL) || (name1[0] == 0)) name1 = "seq1";
 		offset1   = 0;
 		startLoc1 = seq1->startLoc;
@@ -576,7 +579,8 @@ void print_maf_match
 
 	if (sp2->p == NULL)		// sequence 2 is not partitioned
 		{
-		name2 = (seq2->useFullNames)? seq2->header : seq2->shortHeader;
+		// name2 = (seq2->useFullNames)? seq2->header : seq2->shortHeader;
+		name2 = seq2->shortHeader;
 		if ((name2 == NULL) || (name2[0] == 0)) name2 = "seq2";
 		offset2   = 0;
 		startLoc2 = seq2->startLoc;

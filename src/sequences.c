@@ -990,7 +990,7 @@ static seq* private_open_sequence_file
 
 	// if we have no name, use stdin
 
-	if (name == NULL)
+	if (name == NULL || strcmp( name, "-") == 0)
 		{
 		_seq->filename = copy_string ("(stdin)");
 		_seq->f        = stdin;
@@ -5953,16 +5953,17 @@ static void shorten_header
 
 	if (parse_type(nameParseType) == name_parse_type_alnum)
 		{
-		len = strspn (h, "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		                 "abcdefghijklmnopqrstuvwxyz"
-		                 "0123456789" "_");
-		goto skip_suffix_trim;
+	//	len = strspn (h, "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	//	                 "abcdefghijklmnopqrstuvwxyz"
+	//	                 "0123456789" "_");
+		len = strlen (h);
+  		goto skip_suffix_trim;
 		}
 	else if (parse_type(nameParseType) == name_parse_type_darkspace)
 		len = strcspn (h, " \t");
 	else // if (parse_type(nameParseType) == name_parse_type_core)
 		len = strcspn (h, " \t|:");
-
+        
 	// if the suffix is ".nib", ".fasta", etc., remove it
 
 	s = ".nib";
